@@ -1,14 +1,19 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Anobo formulaire
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+<!-- creation du bouton en appelant la fonction qui utilise la méthode Push --> 
+  <ion-item>
+    <button ion-button full (click)="onGoToNewUpUE()"> Unité d'enregistrement </button>
+  </ion-item>
+
+  <ion-item>
+    <button ion-button full (click)="onGoToNewUpRelation()"> Relation </button>
+  </ion-item>
+
 </ion-content>

@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title> Création UE</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content inset>
+
+    <ion-list>
+            <ion-item>
+                <ion-label color="primary">Identidiant</ion-label>
+                <ion-input mode="numeric" placeholder="..."></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="primary">Classe</ion-label>
+                <ion-select [(ngModel)]="classe" placeholder="Sélectionnez dans la liste">
+                <ion-option value="groupe">Groupe</ion-option>
+                <ion-option value="us">US</ion-option>
+                <ion-option value="subdivision">Subdivison</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label color="primary">Type</ion-label>
+                <ion-select [(ngModel)]="type" placeholder="Sélectionnez dans la liste">
+                    <ion-option value="fait">Fait</ion-option>
+                    <ion-option value="structure">Structure</ion-option>
+                    <ion-option value="etc">...</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label color="primary">Préfixe</ion-label>
+                <ion-input mode="text" placeholder="..."></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="primary">Appellation courante</ion-label>
+                <ion-input mode="text" placeholder="Concaténation préfixe + identifiant"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="secondary">Zone</ion-label>
+                <ion-input mode="text" placeholder="..."></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="secondary">Secteur</ion-label>
+                <ion-input mode="text" placeholder="..."></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="tertiary">Description</ion-label>
+                <ion-input mode="text" placeholder="..."></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="tertiary">Interprétation</ion-label>
+                <ion-input mode="text" placeholder="..."></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="tertiary">Désignation</ion-label>
+                <ion-select [(ngModel)]="type" placeholder="Sélectionnez dans la liste">
+                    <ion-option value="tp">Trou de poteau</ion-option>
+                    <ion-option value="fosse">Fosse</ion-option>
+                    <ion-option value="...">...</ion-option>
+                </ion-select>           
+            </ion-item>
+            <button ion-button type="submit" block>Enregistrer UE</button>
+
+    </ion-list>
+</ion-content>

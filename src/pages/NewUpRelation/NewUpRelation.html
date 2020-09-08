@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title> Editer ou créer Relation</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <!-- creation des boutons en appelant la fonction qui utilise la méthode Push --> 
+    <ion-item>
+      <button ion-button full (click)="onGoToNewRelation()"> Création </button>
+    </ion-item>
+    <ion-item>
+        <button ion-button full (click)="onGoToUpRelation()"> Edition </button>
+      </ion-item>
+</ion-content>
