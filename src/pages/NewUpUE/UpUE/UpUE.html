@@ -6,4 +6,28 @@
 
 <ion-content padding>
 
+    <ion-searchbar>
+    [(ngModel)]="myInput"
+    </ion-searchbar>
+
+    <ion-item>
+        <ion-label color="primary">Classe</ion-label>
+        <ion-select [(ngModel)]="classe" placeholder="Sélectionnez dans la liste">
+        <ion-option value="groupe">Groupe</ion-option>
+        <ion-option value="us">US</ion-option>
+        <ion-option value="subdivision">Subdivison</ion-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label color="primary">Type</ion-label>
+        <ion-select [(ngModel)]="type" placeholder="Sélectionnez dans la liste">
+            <ion-option value="fait">Fait</ion-option>
+            <ion-option value="structure">Structure</ion-option>
+            <ion-option value="etc">...</ion-option>
+        </ion-select>
+    </ion-item>
+
+    <button ion-button type="submit" block>Enregistrer UE</button>
+
 </ion-content>
