@@ -1,33 +1,81 @@
 <ion-header>
     <ion-navbar>
-        <ion-title> Edition UE</ion-title>
+        <ion-title> </ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-    <ion-searchbar>
-    [(ngModel)]="myInput"
-    </ion-searchbar>
-
     <ion-item>
-        <ion-label color="primary">Classe</ion-label>
-        <ion-select [(ngModel)]="classe" placeholder="Sélectionnez dans la liste">
-        <ion-option value="groupe">Groupe</ion-option>
-        <ion-option value="us">US</ion-option>
-        <ion-option value="subdivision">Subdivison</ion-option>
-        </ion-select>
+        <button ion-button full (click)="getUeList()"> uelist </button>
     </ion-item>
 
-    <ion-item>
-        <ion-label color="primary">Type</ion-label>
-        <ion-select [(ngModel)]="type" placeholder="Sélectionnez dans la liste">
-            <ion-option value="fait">Fait</ion-option>
-            <ion-option value="structure">Structure</ion-option>
-            <ion-option value="etc">...</ion-option>
-        </ion-select>
-    </ion-item>
+    <ion-list>
+        <ion-item *ngFor= "let ue of listUE">
+            <ion-label color="secondary">{{ue.id}}</ion-label>
+            <ion-label color="secondary">{{ue.classe}}</ion-label>
+            <ion-label color="primary">{{ue.type}}</ion-label>
+        </ion-item>
+    </ion-list>
 
-    <button ion-button type="submit" block>Enregistrer UE</button>
+
+    <ion-list>
+        <!-- POST un nouvel id de 1 à n -->
+        <ion-item>
+            <ion-label color="primary">Identidiant</ion-label>
+            <ion-input  readonly placeholder="...."></ion-input>
+        </ion-item>
+
+        <button ion-button type="submit" block>Rechercher identifiant</button>
+
+
+        <!-- PATCH l'entite ci dessus pour remplir les attributs -->
+        <ion-item>
+            <ion-label color="primary">Classe</ion-label>
+            <ion-select [(ngModel)]="classe" placeholder="Sélectionnez dans la liste">
+            <ion-option value="groupe">Groupe UE</ion-option>
+            <ion-option value="us">US</ion-option>
+            <ion-option value="subdivision">Subdivison</ion-option>
+            </ion-select>
+        </ion-item>
+
+            <!-- Menu déroulant en cascade en fonction de Classe -->
+        <ion-item>
+            <ion-label color="primary">Type</ion-label>
+            <ion-select [(ngModel)]="type" placeholder="Sélectionnez dans la liste">
+                <ion-option value="A">A</ion-option>
+                <ion-option value="B">B</ion-option>
+                <ion-option value="C">C</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <!-- Menu déroulant en cascade en fonction de Type -->
+        <ion-item>
+            <ion-label color="primary">Désignation</ion-label>
+            <ion-select [(ngModel)]="designation" placeholder="Sélectionnez dans la liste">
+                <ion-option value="A1">A1</ion-option>
+                <ion-option value="A2">A2</ion-option>
+            </ion-select>        
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary">Description</ion-label>
+            <ion-textarea auto-grow= "true"></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary">Interpretation </ion-label>
+            <ion-textarea auto-grow= "true"></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary">Secteur</ion-label>
+            <ion-textarea auto-grow= "true"></ion-textarea>
+        </ion-item>
+
+        <button ion-button type="submit" block>Mise à jour UE</button>
+    </ion-list>
+
+
 
 </ion-content>
