@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 // import  {Observable} from 'rxjs/Observable'
 
 
@@ -21,11 +21,8 @@ export class NewUEPage {
 
     // TEST1
     saveUeToServer(){
-        this.http.post('http://localhost:5050/ue', this.ue)
-        .subscribe(
-        () => {
-            console.log()
-        });
+        this.http.post('http://localhost:5050/ue', this.ue, {headers: new HttpHeaders({'Content-Type':'application/json', Accept : 'application/json', Authorization:''})})
+        .subscribe((response) => { console.log(response) });
     }
 
     //TEST2(suite)

@@ -21,12 +21,12 @@
         <!-- TEST1 -->
     <ion-item>
         <ion-label color="primary">Identidiant</ion-label>
-        <ion-input>{{ue.id}} </ion-input>
+        <ion-input [(ngModel)]="ue.id"></ion-input>
     </ion-item>
 
     <ion-item>
         <ion-label color="primary">Classe</ion-label>
-        <ion-input>{{ue.classe}} </ion-input>
+        <ion-input [(ngModel)]="ue.classe"></ion-input>
     </ion-item>
 
         <button ion-button full (click)="saveUeToServer()"> Enregistrer </button>
